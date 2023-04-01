@@ -8,6 +8,9 @@ services:
             - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
             - ./app:/app
     php:
-        image: php:8.2-fpm
+        build:
+            context: .
+            dockerfile: PHP.Dockerfile
+        # image: php:8.2-fpm
         volumes:
             - ./app:/app
